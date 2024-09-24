@@ -1,3 +1,246 @@
-body {
-  background-color: #b5afc9;
+/* MINIMAL RESET */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* APP */
+
+/* APP VARIABLES */
+
+:root {
+  --main-bg-color-dark: #7d798a;
+  --main-bg-color: #b5afc9;
+  --main-text-color-60: rgba(255, 255, 255, 0.6);
+  --main-text-color-100: rgba(255, 255, 255, 1);
+  --font: Arial, Helvetica, sans-serif;
+  --font-text-size-xs: 10px;
+  --font-text-size-s: 12px;
+  --font-text-size-ms: 42px;
+  --font-text-size-m: 48px;
+  --font-text-size-xl: 280px;
+}
+
+/* PAGE */
+
+.page {
+  background-color: var(--main-bg-color-dark);
+  width: 100%;
+  font-family: var(--font);
+}
+
+.page-container {
+  background-color: var(--main-bg-color);
+  margin: 0 auto;
+  max-width: 393px;
+
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.header__logo {
+  margin-top: 42px;
+  margin-left: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.header__location {
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+.location {
+}
+.location__icon {
+}
+.location__form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.location__form input {
+  font-size: var(--font-text-size-s);
+  color: var(--main-text-color-100);
+  background-color: inherit;
+  border: none;
+  overflow: hidden;
+  border-bottom: 1px solid var(--main-text-color-100);
+  min-width: 90px;
+}
+
+.location__form input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--main-text-color-60);
+  text-transform: uppercase;
+}
+
+.location__form label {
+  font-size: var(--font-text-size-xs);
+  color: var(--main-text-color-60);
+}
+
+.location__form button {
+  text-transform: uppercase;
+  color: var(--main-text-color-60);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 1px solid var(--main-text-color-60);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0;
+  border-radius: 5px;
+  transition: ease-in 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.location__form button:hover {
+  color: var(--main-text-color-100);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 1px solid var(--main-text-color-100);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+}
+.weather {
+  padding: 10px;
+}
+
+.sky {
+  display: flex;
+
+  display: flex;
+  gap: 5px;
+}
+.sky__status {
+  font-size: var(--font-text-size-ms);
+
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 700;
+  color: var(--main-text-color-60);
+}
+.sky__icon {
+  width: 160px;
+  height: 160px;
+}
+
+.weather__temp {
+  display: flex;
+}
+.temp {
+  color: var(--main-text-color-60);
+  justify-content: flex-end;
+}
+.temp__degrees {
+  font-weight: 700;
+  font-size: var(--font-text-size-xl);
+  line-height: 0.75;
+  margin: 0;
+  margin-top: 45px;
+  white-space: nowrap;
+  width: min-content;
+  text-align: end;
+}
+
+.temp img {
+  margin-top: 50px;
+  align-self: flex-start;
+  width: 48px;
+  height: 48px;
+}
+
+.weather__humidity {
+  color: var(--main-text-color-100);
+  display: flex;
+  gap: 10px;
+  font-size: var(--font-text-size-m);
+  text-transform: uppercase;
+}
+.humidity {
+}
+.humidity__text {
+}
+.humidity__numbers {
+}
+
+.weather__wind {
+  display: flex;
+  position: relative;
+  width: max-content;
+  margin-left: auto;
+}
+.wind {
+  font-size: var(--font-text-size-xs);
+  color: var(--main-text-color-60);
+  padding: 15px;
+}
+.wind__text {
+  position: absolute;
+  top: 5px;
+  text-transform: uppercase;
+}
+.wind__number {
+  font-size: var(--font-text-size-ms);
+}
+.wind-units {
+  position: absolute;
+  bottom: 0;
+  right: 55px;
+  bottom: 10px;
+}
+.location__form .show {
+  visibility: visible;
+  opacity: 1;
 }
